@@ -1,76 +1,57 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap'); 
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #e5e5e5;
-  display: flex;
-  padding-top: 5rem;
-  justify-content: center;
+  font-family: 'Muli', sans-serif;
   overflow: hidden;
   margin: 0;
-}
-
-.row {
+  background: #708090;
+  height: 100vh;
   display: flex;
-  width: 600px;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.col-header {
-  width: 150px;
-  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+.container{
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+}
+
+.slide{
+  height: 80vh;
   border-radius: 20px;
-  padding: 0.8rem 1rem;
-  color: #fff;
+  margin: 10px;
+  cursor: pointer;
+  color: #F0F8FF;
+  flex: 1;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+  max-width:100%;
+  max-height:100%;
+
 }
 
-.item {
-  width: 150px;
-  height: 66px;
-  border: 1px solid #eee;
-  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-  border-radius: 20px;
-  background: #f7f6f7;
-  padding: 0.8rem 1rem;
-  color: #828282;
-  text-align: center;
-  cursor: grab;
+.slide h3{
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
 }
 
-.item:active {
-  cursor: grabbing;
+.slide.active{
+  flex: 10;
 }
 
-.placeholder {
-  width: 150px;
-  height: 66px;
-}
-
-.start {
-  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
-}
-
-.progress {
-  background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
-}
-
-.done {
-  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
-}
-
-.hold {
-  border: 7px solid #20B2AA;
-}
-
-.hide {
-  display: none;
-}
-
-.hovered {
-  border-top: 1px solid #778899;
+.slide.active h3{
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
 }
